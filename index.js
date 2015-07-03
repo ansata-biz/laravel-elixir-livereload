@@ -13,17 +13,13 @@ elixir.extend('livereload', function (src) {
             'resources/views/**/*'
         ];
 
-
-    src = src || defaultSrc;
-
-    if (config.production === false) {
+    gulp.task('livereload', function () {
+        src = src || defaultSrc;
         var watcher = gulp.watch(src);
 
         watcher.on('change', function (event) {
             livereload.changed(event.path);
-        })
-    }
-    gulp.task('livereload', function () {
+        });
         livereload.listen();
     });
 
