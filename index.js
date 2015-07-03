@@ -28,6 +28,4 @@ elixir.extend('livereload', function (src) {
     });
 
     this.registerWatcher('livereload');
-    return this.queueTask('livereload');
-
 });
